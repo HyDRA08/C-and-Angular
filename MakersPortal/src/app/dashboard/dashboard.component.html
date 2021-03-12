@@ -1,0 +1,21 @@
+<app-logout></app-logout>
+  <!-- <app-logout></app-logout> -->
+  <div class="card m-5" style="width:18rem" *ngIf="userDetails">
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Username : </strong>{{userDetails.UserName}}</li>
+      <li class="list-group-item"><strong>Name : </strong>{{userDetails.FullName}}</li>
+      <li class="list-group-item"><strong>Email : </strong>{{userDetails.UserEmail}}</li>
+      <li class="list-group-item"><strong>userDetails : </strong>{{userDetails.UserRoleID}}</li>
+      <li class="list-group-item"><strong>USer ID : </strong>{{userDetails.UserID}}</li>
+    </ul>
+  </div>
+
+  <div class="card m-5" style="width:300px;text-align: center" *ngIf="isAdmin">
+    <h2><a href="/userlist" style="color: black;">User Control</a></h2>
+  </div>
+  <div class="card m-5" style="width:300px;text-align: center" *ngIf="isMaker">
+    <h2><a href="/itemlist" style="color: black;">Item Control</a></h2>
+  </div>
+  <div class="card m-5" style="width:300px;text-align: center;">
+    <h2><a href="/orderlist" style="color: black;">Order Control</a></h2>
+  </div>

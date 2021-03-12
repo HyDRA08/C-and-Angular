@@ -1,0 +1,17 @@
+<table class="table table-hover">
+    <!-- <tr>
+        <td><strong>Name of the Item</strong></td>
+        <td><strong>Price of the Item</strong></td>
+    </tr> -->
+    <tr *ngFor="let pd of service.orderList">
+        <td>{{pd.ItemName}}</td>
+        <td>{{pd.ItemPrice}}</td>
+        <td>{{pd.OrderTime}}</td>
+        <td>{{pd.PaymentType}}</td>
+        <td>{{pd.OrderID}}</td>
+        <td *ngIf="pd.isDeleted==1" class="far fa-trash-alt fa-lg text-danger">Deleted</td>
+        <!-- <td>
+            <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.OrderID)">Delete</i>
+        </td> -->
+    </tr>
+</table>

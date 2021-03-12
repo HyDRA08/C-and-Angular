@@ -1,0 +1,16 @@
+<table class="table table-hover">
+    <!-- <tr>
+        <td><strong>Name of the Item</strong></td>
+        <td><strong>Price of the Item</strong></td>
+    </tr> -->
+    <tr *ngFor="let pd of service.orderList">
+        <td *ngIf="pd.isDeleted==0">{{pd.ItemName}}</td>
+        <td *ngIf="pd.isDeleted==0">{{pd.ItemPrice}}</td>
+        <td *ngIf="pd.isDeleted==0">{{pd.OrderTime}}</td>
+        <td *ngIf="pd.isDeleted==0">{{pd.PaymentType}}</td>
+        <td *ngIf="pd.isDeleted==0">{{pd.OrderID}}</td>
+        <td *ngIf="pd.isDeleted==0">
+            <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.OrderID)">Delete</i>
+        </td>
+    </tr>
+</table>

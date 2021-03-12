@@ -1,0 +1,15 @@
+<form  #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="ItemID" [value]="service.itemModel.ItemID">
+    <div class="form-group">
+        <input name="ItemName" #ItemName="ngModel" [(ngModel)]="service.itemModel.ItemName" class="form-control"
+            placeholder="Item Name" required minlength="3" maxlength="25">
+    </div>
+    <div class="form-group">
+        <input name="ItemPrice" #ItemPrice="ngModel" [(ngModel)]="service.itemModel.ItemPrice" class="form-control"
+            placeholder="Item Price" required>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" required type="submit" [disabled]="form.invalid"><i
+                class="fas fa-database"></i> Submit</button>
+    </div>
+</form>

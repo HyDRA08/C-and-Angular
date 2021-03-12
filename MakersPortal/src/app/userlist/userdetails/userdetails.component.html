@@ -1,0 +1,28 @@
+<form  #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="UserID" [value]="service.userData.UserID">
+    <div class="form-group">
+        <input name="UserName" #UserName="ngModel" [(ngModel)]="service.userData.UserName" class="form-control"
+            placeholder="User Name" required minlength="3" maxlength="25">
+    </div>
+    <div class="form-group">
+        <input name="FullName" #FullName="ngModel" [(ngModel)]="service.userData.FullName" class="form-control"
+            placeholder="Full Name" required>
+    </div>
+    <div class="form-group">
+        <input name="UserEmail" #UserEmail="ngModel" [(ngModel)]="service.userData.UserEmail" class="form-control"
+            placeholder="User Email" required>
+    </div>
+    <div class="form-group">
+        <input type="password" name="UserPassword" #UserPassword="ngModel" [(ngModel)]="service.userData.UserPassword" class="form-control"
+            placeholder="User Password" required>
+    </div>
+    <select [(ngModel)]="service.roleSelected" [ngModelOptions]="{standalone: true}" (ngModelChange)="getRoleID($event)">
+        <option value="0">Select</option>  
+        <option *ngFor="let role of service.list" [ngValue]="role.RoleID">{{role.RoleName}}</option>
+    </select>
+    <hr>
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" required type="submit" [disabled]="form.invalid"><i
+                class="fas fa-database"></i> Submit</button>
+    </div>
+</form>

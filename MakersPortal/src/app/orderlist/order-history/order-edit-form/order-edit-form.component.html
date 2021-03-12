@@ -1,0 +1,21 @@
+<!-- <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="UserID" [value]="service.orderDetails.UserID">
+    <input type="hidden" name="ItemID" [value]="service.orderDetails.ItemID">
+    <div class="form-group">
+        <input [readonly]="true" name="ItemName" #ItemName="ngModel" [(ngModel)]="service.orderDetails.ItemName" class="form-control"
+            placeholder="Item Name" required minlength="3" maxlength="25">
+    </div>
+    <div class="form-group">
+        <input [readonly]="true" name="ItemPrice" #ItemPrice="ngModel" [(ngModel)]="service.orderDetails.ItemPrice" class="form-control"
+            placeholder="Item Price" required>
+    </div>
+    <select [(ngModel)]="paymentSelected" [ngModelOptions]="{standalone: true}" (ngModelChange)="getPayModeID($event)">
+        <option value="0">Select</option>  
+        <option *ngFor="let ord of service.payList" [ngValue]="ord.PayModeID">{{ord.PaymentType}}</option>
+    </select>
+    <hr>
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" required type="submit" [disabled]="form.invalid"><i
+                class="fas fa-database"></i> Submit</button>
+    </div>
+</form> -->
